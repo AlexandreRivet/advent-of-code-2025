@@ -1,4 +1,4 @@
-import { inputToLines } from "@utils";
+import { inputToLines } from '@utils';
 
 export const part = async (input: string): Promise<number> => {
     const lines = inputToLines(input);

@@ -1,4 +1,4 @@
-import { part } from './part1';
+import { part } from './part';
 import * as fs from 'fs';
 
 describe('part 1', () => {

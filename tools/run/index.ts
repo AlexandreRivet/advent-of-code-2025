@@ -24,7 +24,6 @@ if (!day) {
 }
 
 const dayFolder = path.join(__dirname, `../../days/day-${day.padStart(2, '0')}`);
-const input = fs.readFileSync(`${dayFolder}/input.txt`, 'utf-8');
 
 const part = args[withBenchmark ? 2 : 1];
 (async () => {
@@ -40,7 +39,8 @@ const part = args[withBenchmark ? 2 : 1];
 
     console.log(`=== Day ${day} ===`);
     for (const partNumber of parts) {
-        const { part } = await import(`${dayFolder}/part${partNumber}`);
+        const input = fs.readFileSync(`${dayFolder}/part${partNumber}/input.txt`, 'utf-8');
+        const { part } = await import(`${dayFolder}/part${partNumber}/part`);
         await run(part, input, `Part ${partNumber}`, withBenchmark);
     }
 })();

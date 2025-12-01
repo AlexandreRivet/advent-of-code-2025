@@ -1,7 +1,7 @@
-import { part } from './part2';
+import { part } from './part';
 import * as fs from 'fs';
 
-describe('part 2', () => {
+describe('part 1', () => {
     it('example', async () => {
         const example = fs.readFileSync(__dirname + '/example.txt', 'utf-8');
         expect(await part(example)).toBe(1);
